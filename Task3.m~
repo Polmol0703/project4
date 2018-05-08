@@ -8,14 +8,19 @@ n = 3;
 omega = 4;
 counter1 = 1;
 
-for i = 20:0.5:100 %val
-    K_h = 0.085*i;
-    r_h = 0.1*i;
+for R = 1:0.05:50 %looping over values of R
+    K_h = 0.085*R;
+    r_h = 0.1*R;
     counter2 = 1;
-    for j = 0:0.01:1
-        [power(counter1,counter2), betz_power(counter1,counter2),betz_eff(counter1,counter2)] = Task1(rho ,v, alpha, C_l, n, K_h, j,r_h, i, omega);
+    for sigma = 0:0.001:1 %looping over values of sigma
+        [power(counter1,counter2), betz_power(counter1,counter2), betz_eff(counter1,counter2)] = Task1(rho ,v, alpha, C_l, n, K_h, sigma,r_h, R, omega);
         counter2 = counter2 + 1;
     end
     counter1 = counter1 + 1;
 end
 
+power2 = power(power <1500.1 & power >1499.9)
+[row,col] = find(power == power2(3))
+
+Rfinal = 1 + row * 0.05
+sigmaFinal = 0 + col * 0.001
