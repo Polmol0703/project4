@@ -3,7 +3,7 @@ function [power, betz_power,betz_eff] = Task1(rho,v_1, alpha, c_l,n,k_h, sigma,r
 x = r_h/R;
 y = R;
 v = v_1;
-A = pi()*R^2 - pi()*r_h^2;
+A = pi()*(R^2) - pi()*(r_h^2);
 
 power = (c_l*k_h*n*rho*v*((9*w^2*x^2*y^2+4*v^2)^(3/2)*(9*w^2*((2*sigma-5)*x^2+5)*y^2+8*sigma*v^2)...
         -(9*w^2*y^2+4*v^2)^(3/2)*(9*w^2*(5*(sigma-1)*x^2-3*sigma+5)*y^2+8*sigma*v^2)))...

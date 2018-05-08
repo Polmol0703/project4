@@ -1,0 +1,21 @@
+clear all
+
+rho = 1.18;
+v = 6.5;
+alpha = 8;
+C_l = 1.27;
+n = 3;
+omega = 4;
+counter1 = 1;
+
+for i = 20:0.5:100 %val
+    K_h = 0.085*i;
+    r_h = 0.1*i;
+    counter2 = 1;
+    for j = 0:0.01:1
+        [power(counter1,counter2), betz_power(counter1,counter2),betz_eff(counter1,counter2)] = Task1(rho ,v, alpha, C_l, n, K_h, j,r_h, i, omega);
+        counter2 = counter2 + 1;
+    end
+    counter1 = counter1 + 1;
+end
+
