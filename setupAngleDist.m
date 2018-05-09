@@ -1,4 +1,4 @@
-function [] = setupAngleDist(alpha, lambda, R, r_h)
+function [setup_angle_array, r_array] = setupAngleDist(alpha, lambda, R, r_h)
 
-r = linspace(r_h, R)
-xi = alpha - atand((2*R) ./ (3*lambda*r))
+r_array = linspace(r_h, R);
+setup_angle_array = alpha - atand((2*R) ./ (3*lambda*r_array));
